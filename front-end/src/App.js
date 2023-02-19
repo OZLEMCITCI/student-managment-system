@@ -1,6 +1,6 @@
 
 import {useState, useEffect} from 'react'
-import {deleteStudent, getAllStudents} from "./client";
+import {deleteStudent, getAllStudents} from "./utility/client";
 import {
     Layout,
     Menu,
@@ -24,10 +24,10 @@ import {
     LoadingOutlined,
     PlusOutlined
 } from '@ant-design/icons';
-import StudentDrawerForm from "./StudentDrawerForm";
+import StudentDrawerForm from "./components/StudentDrawerForm";
 
-import './App.css';
-import {errorNotification, successNotification} from "./Notification";
+import './css/App.css';
+import {errorNotification, successNotification} from "./utility/Notification";
 
 
 const {Header, Content, Footer, Sider} = Layout;
