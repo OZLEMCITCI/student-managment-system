@@ -1,20 +1,38 @@
 
-import { Breadcrumb, Layout, Menu} from 'antd';
+import {Breadcrumb, Empty, Layout, Menu, Spin, Table} from 'antd';
 import React, { useState } from 'react';
+import {columns} from "../utility/utility";
 import {
     DesktopOutlined,
     FileOutlined,
     PieChartOutlined,
     TeamOutlined,
     UserOutlined,
+    LoadingOutlined
 } from '@ant-design/icons';
 import SubMenu from "antd/es/menu/SubMenu";
 
-
 const { Header, Content, Footer, Sider } = Layout;
-function AppLayout () {
+const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
+function AppLayout ({students,fetching}) {
 
-    const [collapsed, setCollapsed] = useState(false)
+    const [collapsed, setCollapsed] = useState(false);
+    const renderStudents = () => {
+        if (fetching) {
+            return <Spin indicator={antIcon} />
+        }
+        if (students.length <= 0) {
+            return <Empty />;
+        }
+        return <Table
+            dataSource={students}
+            columns={columns}
+            bordered
+            title={() => 'Students'}
+            pagination={{ pageSize: 50 }}
+            scroll={{ y: 240 }}
+        />;
+    }
 
     return<Layout style={{ minHeight: '100vh' }}>
         <Sider collapsible collapsed={collapsed}
@@ -49,7 +67,7 @@ function AppLayout () {
                     <Breadcrumb.Item>Bill</Breadcrumb.Item>
                 </Breadcrumb>
                 <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-                    Bill is a cat.
+                    {renderStudents()}
                 </div>
             </Content>
             <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>

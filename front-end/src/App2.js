@@ -6,12 +6,13 @@ import "./css/App.css"
 function  App(){
 
     const [students,setStudents]=useState([]);
+    const [fetching, setFetching] = useState(true);
 
     useEffect(()=>{
-        fetchStudents(setStudents);
+        fetchStudents(setStudents,setFetching);
     },[])
 
-    return (students.length>0 ? <AppLayout/>: <p>no data</p>)
+    return ( <AppLayout students={students} fetching={fetching}/>)
 
 
 }
