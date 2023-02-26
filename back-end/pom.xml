@@ -32,6 +32,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.3.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -66,7 +79,7 @@
 						<version>1.11.2</version>
 						<configuration>
 							<nodeVersion>v4.6.0</nodeVersion>
-							<workingDirectory>src/frontend</workingDirectory>
+							<workingDirectory>../front-end</workingDirectory>
 						</configuration>
 						<executions>
 							<execution>
@@ -111,7 +124,7 @@
 								<configuration>
 									<resources>
 										<resource>
-											<directory>src/frontend/build</directory>
+											<directory>../front-end/build</directory>
 										</resource>
 
 									</resources>

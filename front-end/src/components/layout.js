@@ -1,15 +1,17 @@
 
-import {Breadcrumb, Empty, Layout, Menu, Spin, Table} from 'antd';
+import {Badge, Breadcrumb, Button, Empty, Layout, Menu, Spin, Table, Tag} from 'antd';
 import React, { useState } from 'react';
-import {columns} from "../utility/utility";
+import {columns, fetchStudents} from "../utility/utility";
 import {
     DesktopOutlined,
     FileOutlined,
     PieChartOutlined,
     TeamOutlined,
     UserOutlined,
-    LoadingOutlined
+    LoadingOutlined,
+    PlusOutlined
 } from '@ant-design/icons';
+import StudentDrawerForm from "./StudentDrawerForm";
 import SubMenu from "antd/es/menu/SubMenu";
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -17,6 +19,7 @@ const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 function AppLayout ({students,fetching}) {
 
     const [collapsed, setCollapsed] = useState(false);
+    const [showDrawer, setShowDrawer] = useState(false);
     const renderStudents = () => {
         if (fetching) {
             return <Spin indicator={antIcon} />
@@ -24,14 +27,27 @@ function AppLayout ({students,fetching}) {
         if (students.length <= 0) {
             return <Empty />;
         }
-        return <Table
+        return <>
+            <StudentDrawerForm showDrawer={showDrawer} fetchStudents={fetchStudents} setShowDrawer={setShowDrawer} />
+            <Table
             dataSource={students}
             columns={columns}
             bordered
-            title={() => 'Students'}
+            title={() =>
+                <>
+                <Tag>Number of students</Tag>
+                <Badge count={students.length} className="site-badge-count-4"/>
+                <br/><br/>
+                <Button
+                onClick={() => setShowDrawer(!showDrawer)}
+                type="primary" shape="round" icon={<PlusOutlined/>} size="small">
+                Add New Student
+                </Button>
+                </>}
             pagination={{ pageSize: 50 }}
-            scroll={{ y: 240 }}
-        />;
+            scroll={{ y: 1000 }}
+        />
+        </>;
     }
 
     return<Layout style={{ minHeight: '100vh' }}>
