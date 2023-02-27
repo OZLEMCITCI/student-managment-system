@@ -14,7 +14,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table
-public class Student {
+public class Student implements Comparable<Student>{
     @Id
     @SequenceGenerator(
             name = "student_sequence",
@@ -34,5 +34,10 @@ public class Student {
         this.name = name;
         this.email = email;
         this.gender = gender;
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return Long.compare(this.id,o.id);
     }
 }

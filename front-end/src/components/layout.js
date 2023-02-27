@@ -25,7 +25,7 @@ function AppLayout ({students,fetching}) {
             return <Spin indicator={antIcon} />
         }
         if (students.length <= 0) {
-            return <Empty />;
+            return <><StudentDrawerForm showDrawer={showDrawer} fetchStudents={fetchStudents} setShowDrawer={setShowDrawer} /><Empty /></>;
         }
         return <>
             <StudentDrawerForm showDrawer={showDrawer} fetchStudents={fetchStudents} setShowDrawer={setShowDrawer} />
@@ -38,11 +38,11 @@ function AppLayout ({students,fetching}) {
                 <Tag>Number of students</Tag>
                 <Badge count={students.length} className="site-badge-count-4"/>
                 <br/><br/>
-                <Button
-                onClick={() => setShowDrawer(!showDrawer)}
-                type="primary" shape="round" icon={<PlusOutlined/>} size="small">
-                Add New Student
-                </Button>
+                {/*<Button*/}
+                {/*onClick={() => setShowDrawer(!showDrawer)}*/}
+                {/*type="primary" shape="round" icon={<PlusOutlined/>} size="small">*/}
+                {/*Add New Student*/}
+                {/*</Button>*/}
                 </>}
             pagination={{ pageSize: 50 }}
             scroll={{ y: 1000 }}
@@ -79,8 +79,11 @@ function AppLayout ({students,fetching}) {
             <Header className="site-layout-background" style={{ padding: 0 }} />
             <Content style={{ margin: '0 16px' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
-                    <Breadcrumb.Item>User</Breadcrumb.Item>
-                    <Breadcrumb.Item>Bill</Breadcrumb.Item>
+                    <Button
+                        onClick={() => setShowDrawer(!showDrawer)}
+                        type="primary" shape="round" icon={<PlusOutlined/>} size="small">
+                        Add New Student
+                    </Button>
                 </Breadcrumb>
                 <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
                     {renderStudents()}

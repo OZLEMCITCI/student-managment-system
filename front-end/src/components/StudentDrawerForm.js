@@ -3,12 +3,13 @@ import {addNewStudent} from "../utility/client";
 import {LoadingOutlined} from "@ant-design/icons";
 import {useState} from 'react';
 import {successNotification, errorNotification} from "../utility/Notification";
+import {fetchStudents} from "../utility/utility";
 
 const {Option} = Select;
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
-function StudentDrawerForm({showDrawer, setShowDrawer, fetchStudents}) {
+function StudentDrawerForm({showDrawer, setShowDrawer}) {
     const onCLose = () => setShowDrawer(false);
     const [submitting, setSubmitting] = useState(false);
 
