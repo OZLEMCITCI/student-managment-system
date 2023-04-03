@@ -1,0 +1,20 @@
+[
+  {
+    "id": 6,
+    "name": "Jasmine Ozlem Citci",
+    "email": "ozlemcitci@gmail.com",
+    "gender": "FEMALE"
+  },
+  {
+    "id": 7,
+    "name": "Mustafa Citci",
+    "email": "mastersmcitci@gmail.com",
+    "gender": "FEMALE"
+  },
+  {
+    "id": 8,
+    "name": "test",
+    "email": "test",
+    "gender": "OTHER"
+  }
+]
