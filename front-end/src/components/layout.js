@@ -22,7 +22,7 @@ function AppLayout ({students,fetching}) {
     const [showDrawer, setShowDrawer] = useState(false);
     const renderStudents = () => {
         if (fetching) {
-            return <Spin indicator={antIcon} />
+            return <Spin className={"Spinner"} indicator={antIcon} />
         }
         if (students.length <= 0) {
             return <><StudentDrawerForm showDrawer={showDrawer} fetchStudents={fetchStudents} setShowDrawer={setShowDrawer} /><Empty /></>;
@@ -44,8 +44,9 @@ function AppLayout ({students,fetching}) {
                 {/*Add New Student*/}
                 {/*</Button>*/}
                 </>}
-            pagination={{ pageSize: 50 }}
+            pagination={{ pageSize: 15 }}
             scroll={{ y: 1000 }}
+            className={"student-table"}
         />
         </>;
     }
@@ -79,7 +80,7 @@ function AppLayout ({students,fetching}) {
                         Add New Student
                     </Button>
                 </Breadcrumb>
-                <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+                <div className="site-layout-background mainDiv" style={{ padding: 24, minHeight: 360 }}>
                     {renderStudents()}
                 </div>
             </Content>

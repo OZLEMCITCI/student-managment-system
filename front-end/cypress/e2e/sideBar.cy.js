@@ -2,18 +2,15 @@ describe('Sidebar Extension', () => {
 
     beforeEach(()=>{
         cy.mockStudents()
-        cy.visit('http://localhost:3000/') // Replace this with the URL of your application
-        cy.wait('@getStudents') // Wait for the mock API response to load
+        cy.visit('http://localhost:3000/')
+        cy.wait('@getStudents')
     })
-
     it('should toggle collapse when clicked', () => {
         cy.get('.ant-layout-sider-trigger').click()
         cy.get('.ant-layout-sider').should('have.class', 'ant-layout-sider-collapsed')
         cy.get('.ant-layout-sider-trigger').click()
         cy.get('.ant-layout-sider').should('not.have.class', 'ant-layout-sider-collapsed')
     })
-
-
     it('should open submenu when clicked', () => {
         const initialUrl = Cypress.config().baseUrl;
         cy.get('.ant-menu-submenu-title').contains('User').click()
