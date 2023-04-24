@@ -1,0 +1,114 @@
+[{
+  "id": 1,
+  "name": "Student 1",
+  "email": "student1@gmail.com",
+  "gender": "MALE"
+},
+{
+"id": 2,
+"name": "Student 2",
+"email": "student2@yahoo.com",
+"gender": "FEMALE"
+},
+{
+"id": 3,
+"name": "Student 3",
+"email": "student3@hotmail.com",
+"gender": "OTHER"
+},
+{
+"id": 4,
+"name": "Student 4",
+"email": "student4@aol.com",
+"gender": "MALE"
+},
+{
+"id": 5,
+"name": "Student 5",
+"email": "student5@gmail.com",
+"gender": "MALE"
+},
+{
+"id": 6,
+"name": "Student 6",
+"email": "student6@yahoo.com",
+"gender": "OTHER"
+},
+{
+"id": 7,
+"name": "Student 7",
+"email": "student7@hotmail.com",
+"gender": "FEMALE"
+},
+{
+"id": 8,
+"name": "Student 8",
+"email": "student8@aol.com",
+"gender": "MALE"
+},
+{
+"id": 9,
+"name": "Student 9",
+"email": "student9@gmail.com",
+"gender": "MALE"
+},
+{
+"id": 10,
+"name": "Student 10",
+"email": "student10@yahoo.com",
+"gender": "FEMALE"
+},
+{
+"id": 11,
+"name": "Student 11",
+"email": "student11@hotmail.com",
+"gender": "OTHER"
+},
+{
+"id": 12,
+"name": "Student 12",
+"email": "student12@aol.com",
+"gender": "MALE"
+},
+{
+"id": 13,
+"name": "Student 13",
+"email": "student13@gmail.com",
+"gender": "MALE"
+},
+{
+"id": 14,
+"name": "Student 14",
+"email": "student14@yahoo.com",
+"gender": "OTHER"
+},
+{
+"id": 15,
+"name": "Student 15",
+"email": "student15@hotmail.com",
+"gender": "FEMALE"
+},
+{
+"id": 16,
+"name": "Student 16",
+"email": "student16@aol.com",
+"gender": "MALE"
+},
+{
+"id": 17,
+"name": "Student 17",
+"email": "student17@gmail.com",
+"gender": "MALE"
+},
+{
+"id": 18,
+"name": "Student 18",
+"email": "student18@yahoo.com",
+"gender": "FEMALE"
+},
+{
+"id": 19,
+"name": "Student 19",
+"email": "student19@hotmail.com",
+"gender": "OTHER"
+}]
